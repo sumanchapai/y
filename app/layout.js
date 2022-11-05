@@ -1,4 +1,10 @@
-import { testdata } from "../lib/buildData";
+async function testdata() {
+    const res = await fetch("https://jsonplaceholder.typicode.com/todos/1", {
+        next: { revalidate: 10 },
+    });
+    return res.json();
+}
+
 
 export default async function RootLayout({ children }) {
     const data = await testdata();
