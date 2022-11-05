@@ -1,4 +1,7 @@
-export default function RootLayout({ children }) {
+import { testdata } from "../lib/buildData";
+
+export default async function RootLayout({ children }) {
+    const data = await testdata();
     return (
         <html>
             <body>
